@@ -1,0 +1,26 @@
+.logo {
+    display: block;
+    margin: 0 auto;
+
+}
+.Onborading{
+    top:0;
+    padding-top: 50%;
+    background: url('../../img/Pattern.svg') no-repeat ;
+    background-size: cover;
+    background-position-y: 0px;
+    height: 50%;
+
+}
+  
+  .tutorial h2{
+    font-size: 1.9em;
+    font-family: 'Viga';
+    color:  #15BE77;
+    text-align: center;
+  }
+  .tutorial {
+    font-family: 'Raleway';
+    text-align: center;
+    font-size: 1.2em;
+  }

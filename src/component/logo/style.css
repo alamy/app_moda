@@ -1,0 +1,34 @@
+.logo {
+    display: block;
+    margin: 0 auto;
+
+}
+
+.logoBox h1 {
+    font-size: 2.4em;
+    text-align: center;
+    font-family: 'Viga';
+    color:  #15BE77;
+    margin: 0;
+  }
+  .logoBox p {
+    font-family: 'Raleway';
+    text-align: center;
+    margin: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .logoSpin {
+      animation: App-logo-spin infinite 10s linear;
+    }
+  }
+  
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

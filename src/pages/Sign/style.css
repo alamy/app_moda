@@ -1,0 +1,30 @@
+.LoginComponent {
+    width: 100vw;
+    height: 95vh;
+    background: url('../../img/Pattern.svg') no-repeat ;
+    background-size: cover;
+    padding-top: 5vh;
+    background-position-y: 0px;
+}
+
+.LoginComponent img {
+    display: block;
+    margin: 0 auto;
+}
+
+.LoginComponent h3 {
+    text-align: center;
+}
+
+.LoginComponent input{
+    width: 70%;
+    display: block;
+    height: 60px;
+    padding-left: 20px;
+    margin: 10px auto;
+    border: 1px solid #F4F4F4;
+    border-radius: 20px;
+    font-family: 'Raleway';
+    font-size: 1.2em;
+    background-color: aliceblue;
+}

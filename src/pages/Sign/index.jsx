@@ -1,0 +1,56 @@
+import { React, useState } from "react"
+import { Link } from "react-router-dom"
+import './style.css'
+import Logo from '../../component/logo'
+import Validacao from '../../db/validar.json' 
+
+var objeto = Validacao;
+const Sign = () => {
+    let [name, setName] = useState('');
+    let [senha, setSenha] = useState(''); 
+
+    const validarCampo = () => {
+        for(let i = 0; i < objeto.length; i++){
+            if(name !== objeto[i].name || senha !== objeto[i].senha){
+             console.log("não entrar")
+            }else{
+                console.log("entrar")
+                Logar()
+            }
+         }
+    }
+
+    const Logar = () => {
+        console.log(name)
+        console.log("______________")
+        console.log(senha)
+    }
+    return(
+       <>
+       <section className="LoginComponent">
+        <Logo/>
+        <h3>Caso não tenha conta <Link>Clique aqui!</Link></h3>
+        
+        <input 
+            type='text' 
+            name="nome"
+            placeholder="Digite seu usuario"
+            value={name}
+            onChange={(e) => setName(e.target.value)}/>
+
+        <input 
+            type='password' 
+            name="senha"  
+            placeholder="Digite sua senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}/>
+
+
+        <button onClick={validarCampo} className="green">Entrar</button>
+
+       </section>
+       </>
+    )
+}
+
+export default Sign
