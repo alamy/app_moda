@@ -1,11 +1,12 @@
 import { React, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import './style.css'
 import Logo from '../../component/logo'
 import Validacao from '../../db/validar.json' 
 
 var objeto = Validacao;
 const Sign = () => {
+    const navigate = useNavigate()
     let [name, setName] = useState('');
     let [senha, setSenha] = useState(''); 
 
@@ -21,6 +22,8 @@ const Sign = () => {
     }
 
     const Logar = () => {
+      
+        navigate("/onb");
         console.log(name)
         console.log("______________")
         console.log(senha)

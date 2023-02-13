@@ -1,0 +1,97 @@
+.HomePage {
+    background: url('../../img/Pattern.svg') no-repeat ;
+    background-size: cover;
+    background-position-y: 0px;
+    padding-bottom: 50vh;
+    height: 100%;
+}
+.HomePage h1 {
+    font-size: 1.9em;
+    font-family: 'Viga';
+    color:  #15BE77;
+    text-align: center;
+}
+.HomePage h5 {
+    margin-left: 28px;
+    font-family: 'Viga';
+    font-size: 1.2em;
+}
+.inputSearch {
+    background: #fdcd96;
+    border-radius: 15px;
+    width: 90%;
+    height: 40px;
+    position: relative;
+    border: 0px;
+    margin: 0 auto;
+    padding-left: 10px;
+    color: #fff;
+}
+.inputSearch input{
+    border: 0px;
+    width: 90%;
+    float: right;
+    height: 40px;
+    background: none;
+    color: #DA6317;
+}
+.icon {
+    margin-top: 7px;
+    color: #DA6317;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.companias{
+    list-style: none;
+}
+
+.companias li {
+    width: 40vw;
+    height: 20vh;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    background-color: #fff;
+    margin: 10px 1%;
+    float: left;
+    border-radius: 20px;
+    box-shadow: 4px 3px 10px #cecece;
+    padding-top: 20px;
+}
+.companias li img {
+    height: 60px;
+}
+.companias li h2 {
+    width: 100%;
+    font-size: 1.0em;
+}
+
+
+/* isso vai ser um component */
+
+.menu-footer {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 3px rgba(124, 124, 124, 0.8);
+    border-radius: 26px;
+    width: 98vw;
+    margin-left: 1vw;
+    height: 74px;
+    position: fixed;
+    bottom: 0;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.menu-footer  span{
+    width: 25%;
+    padding-top: 12px;
+    font-size: 2.0em;
+    font-weight: 700;
+    color:  #15BE77;
+    text-align: center;
+    height: 60px;
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Vegan Resto",
+        "img" : "vegan_resto.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    },
+    {
+        "name": "Good Food",
+        "img" : "good_food.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    },
+    {
+        "name": "Healthy Food",
+        "img" : "healthy_food.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    },
+    {
+        "name": "Smart Resto",
+        "img" : "smart_resto.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    },
+    {
+        "name": "Vegan Resto",
+        "img" : "vegan_resto.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    },
+    {
+        "name": "Good Food",
+        "img" : "good_food.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    },
+    {
+        "name": "Healthy Food",
+        "img" : "healthy_food.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    },
+    {
+        "name": "Smart Resto",
+        "img" : "smart_resto.png",
+        "lat": "-8.045125",
+        "long": "-34.9098079"
+    }
+]

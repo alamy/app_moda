@@ -6,6 +6,7 @@ import './style.css';
 const Buttom = ({name, path, color}) => {
     const navigate = useNavigate();
     const Path = () => {
+        console.log(path)
         return(
             navigate(path)
         )
