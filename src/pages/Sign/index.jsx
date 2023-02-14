@@ -16,18 +16,11 @@ const Sign = () => {
              console.log("não entrar")
             }else{
                 console.log("entrar")
-                Logar()
+                navigate("/home");
             }
          }
     }
 
-    const Logar = () => {
-      
-        navigate("/onb");
-        console.log(name)
-        console.log("______________")
-        console.log(senha)
-    }
     return(
        <>
        <section className="LoginComponent">

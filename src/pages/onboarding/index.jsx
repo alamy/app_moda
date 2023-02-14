@@ -46,7 +46,7 @@ const Onborading = () => {
            <img src={onbordingImg} alt="Solicity" title="Solicity" />
            <h2>Nosso Objetivo</h2>
            <p>Com colaboração diminuir a insegurança alimentar </p>
-           <Buttom name="Próximo" color="green" path='/home' />
+           <Buttom name="Próximo" color="green" path='/login' />
         </section>
     </>
     )
