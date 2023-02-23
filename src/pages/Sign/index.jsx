@@ -1,7 +1,7 @@
 import { React, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import './style.css'
-import Logo from '../../component/logo'
+import Logo from '../../component/atoms/logo'
 import Validacao from '../../db/validar.json' 
 
 var objeto = Validacao;
@@ -25,7 +25,7 @@ const Sign = () => {
        <>
        <section className="LoginComponent">
         <Logo/>
-        <h3>Caso não tenha conta <Link>Clique aqui!</Link></h3>
+        <h3>Caso não tenha conta <Link to="/creat">Clique aqui!</Link></h3>
         
         <input 
             type='text' 

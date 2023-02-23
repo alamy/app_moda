@@ -1,0 +1,16 @@
+.creatCount h3 {
+    text-align: center;
+}
+.inputCreat {
+    text-align: center;
+    margin: 20px 0;
+}
+.inputRadio {
+    text-align: center;
+
+}
+.inputRadio label{
+    width: 50%;
+    margin: 0 auto;
+   
+}

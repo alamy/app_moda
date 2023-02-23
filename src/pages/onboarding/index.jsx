@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import Buttom from '../../component/buttom';
-import Logo from '../../component/logo'
+import Logo from '../../component/atoms/logo'
 import onbordingImg from "../../img/Onbordin.jpg";
  import './style.css'
 

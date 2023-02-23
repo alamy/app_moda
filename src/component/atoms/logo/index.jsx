@@ -1,6 +1,6 @@
 import React from "react";
 import './style.css';
-import SolicityLogo from "../../img/Logo.svg";
+import SolicityLogo from "../../../img/Logo.svg";
 
 const Logo = (props) => {    
     let rotate = "";
