@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import Buttom from '../../component/buttom';
+import Buttom from '../../component/atoms/buttom';
 import Logo from '../../component/atoms/logo'
 import onbordingImg from "../../img/Onbordin.jpg";
  import './style.css'
