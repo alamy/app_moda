@@ -7,7 +7,7 @@ const Logo = (props) => {
     if(props.spin === 'true'){
         rotate = "logoSpin"
     }
-    console.log(rotate)
+    
     return (<>
         <div className="logoBox">
             <img src={SolicityLogo} className={"logo " + rotate} alt="Solicity" title="Solicity" />
