@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
-import Buttom from '../../component/buttom';
-import Logo from '../../component/logo'
+import Buttom from '../../component/atoms/buttom';
+import Logo from '../../component/atoms/logo'
 import onbordingImg from "../../img/Onbordin.jpg";
  import './style.css'
 
@@ -16,8 +16,9 @@ const Onborading = () => {
     }
 
     useEffect(() => {
-        if(sessionStorage.getItem("acesso") === "false"){
-            if(cont < 2) {
+        if(!sessionStorage.getItem("acesso")){
+            if(cont <= 4) {
+                console.log(cont)
                 contador()
             }else {
                 window.document.getElementById('onbor').classList.remove('block')
@@ -37,7 +38,7 @@ const Onborading = () => {
 
     return(
     <>
-        <div className="BakgroundOnbor"></div>
+        <div className="BakgroundOnbor">
             <section className="Onborading block" id="onbor">
             <Logo spin="true"/>
         </section>
@@ -48,6 +49,7 @@ const Onborading = () => {
            <p>Com colaboração diminuir a insegurança alimentar </p>
            <Buttom name="Próximo" color="green" path='/login' />
         </section>
+        </div>
     </>
     )
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Onborading from './pages/onboarding';
+import Onborading from './pages/Onboarding';
 import Sign from './pages/Sign';
-import Home from './pages/home';
+import Home from './pages/Home';
+import CreatCount from './pages/CreateCount';
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Sign />} />
         <Route path="/onb" element={<Onborading />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/creat" element={<CreatCount />} />
     </Routes>
   </BrowserRouter>
   </div>
