@@ -8,8 +8,7 @@ const Home = () => {
 
     const mapCompanias = companias.map((companias) => 
         <li>
-           
-            <img src={"http://localhost:3000/companias/" + companias.img}  alt={companias.name} title={companias.name}/>
+            <img src={companias.img}  alt={companias.name} title={companias.name}/>
             <h2> {companias.name}</h2>
         </li>
     )
