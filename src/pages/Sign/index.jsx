@@ -11,10 +11,12 @@ const Sign = () => {
     const navigate = useNavigate()
     let [name, setName] = useState('');
     let [senha, setSenha] = useState(''); 
+    let [error, setError] = useState(''); 
 
     const validarCampo = () => {
         for(let i = 0; i < objeto.length; i++){
             if(name !== objeto[i].name || senha !== objeto[i].senha){
+                    setError('Este usuario não existe')
              console.log("não entrar")
             }else{
                 console.log("entrar")
@@ -35,7 +37,7 @@ const Sign = () => {
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
-                            <span class="material-symbols-outlined">person</span>
+                            <span className="material-symbols-outlined">person</span>
                         </InputAdornment>
                     ),
                 }}
@@ -52,18 +54,18 @@ const Sign = () => {
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
-                            <span class="material-symbols-outlined">person</span>
+                            <span className="material-symbols-outlined">lock</span>
                         </InputAdornment>
                     ),
                 }}
                 type="password"
-                placeholder="digite seu nome"
+                placeholder="********************"
                 variant="outlined"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
             />
         </div>
-
+                <p className="error">{error}</p>
         <button onClick={validarCampo} className="green">Entrar</button>
 
        </section>
