@@ -6,29 +6,34 @@ import TextField from '@mui/material/TextField'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import Validacao from '../../db/validar.json' 
 import './style.css'
+import axios from 'axios'
 
-var objeto = Validacao;
+var validacaoUser;
 const CreatCount = () => {
     const navigate = useNavigate()
     let [usuario, setUsuario] = useState('');
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
     let [cnpj, setcnpj] = useState('');
-    const [tipo, setTipo] = useState('ONG');
+    let [telefone, setTelefone] = useState('');
+    let [tipo, setTipo] = useState('ONG');
     let [errorEmail, setErrorEmail] = useState('');
     let [errorUsuario, setErrorUsuario] = useState('');
+    let [errorTelefone, setErrorTelefone] = useState('');
     let [errorPassword, setErrorPassword] = useState('');
     let [errorCnpj, setErrorCnpj] = useState('');
-    let [validation, setValidation] = useState('');
     let [cnpjBollean, setCnpjBollean] = useState(false);
     let [usuarioBollean, setUsuarioBollean] = useState(false);
     let [emailBollean, setEmailBollean] = useState(false);
     let [passwordBollean, setPasswordBollean] = useState(false);
+    let [telefoneBollean, setTelefoneBollean] = useState(false);
     
 
-  
+    const instance = axios.create({
+        baseURL: 'http://localhost:3000/'
+      });
+
     function Validacao(a, b, c){
         if(a === ''){
             b("Campo precisa ser preenchido")
@@ -44,35 +49,37 @@ const CreatCount = () => {
         Validacao(usuario, setErrorUsuario, setUsuarioBollean)        
         Validacao(password, setErrorPassword, setPasswordBollean)
         Validacao(cnpj, setErrorCnpj, setCnpjBollean)
-        if(Validacao(email, setErrorEmail) && Validacao(usuario, setErrorUsuario) && Validacao(password, setErrorPassword) &&  Validacao(cnpj, setErrorCnpj)){
-            setValidation(false)
-        }else if(!email.includes("@")){
+        Validacao(telefone, setErrorTelefone, setTelefoneBollean)
+        if(!email.includes("@")){
             setErrorEmail('O email Precisa conter @')
-            setValidation(false)
         }else if(!email.includes(".")){
             setErrorEmail('O email Precisa conter .')
-            setValidation(false)
         }else{
+            console.log("estou aqui")
             setErrorEmail('')
-            setValidation(true)
-        }
-
-   
-        
-        if(validation){
-            console.log(validation)
             let cadastro = {
                 "name" : usuario,
                 "senha": password,
                 "email": email,
+                "telefone": telefone,
+                "cnpj": cnpj,
                 "tipo": tipo
             }
-            console.log(cadastro)
-            console.log("________________")
-            objeto.push(cadastro)
-            console.log(objeto)
-            navigate("/sucesso");
+            createUser(cadastro)
         }
+
+         async function createUser(objUser){
+           await instance({method:'post', url: 'user', data: objUser})
+                .then((res) => validacaoUser = res.data)
+                .catch((err) => {
+                    console.log("ops! Erro na api GIT " + err)   
+            })
+            if(validacaoUser){
+                navigate("/sucesso");
+            }
+        }
+     
+        
     }
 
     return (
@@ -119,6 +126,26 @@ const CreatCount = () => {
                 helperText={errorEmail}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+            />
+            </div>
+            <div className="inputCreat">
+             <TextField
+                error={telefoneBollean}
+                id="input-email"
+                label="Email"
+                color="success"
+                InputProps={{
+                startAdornment: (
+                    <InputAdornment position="start">
+                        <span className="material-symbols-outlined">phone</span>
+                    </InputAdornment>
+                ),
+                }}
+                placeholder="(00) 00000-0000"
+                variant="outlined"
+                helperText={errorTelefone}
+                value={telefone}
+                onChange={(e) => setTelefone(e.target.value)}
             />
             </div>
             <div className="inputCreat">
@@ -173,7 +200,7 @@ const CreatCount = () => {
                     <FormControlLabel value="ONG" control={<Radio />} label="ONG" />
                 </RadioGroup>
             </div>    
-            <button onClick={createCount}>Proximo</button>
+            <button onClick={createCount} className="green">Proximo</button>
             </section>
         </>
     )

@@ -4,25 +4,42 @@ import TextField from '@mui/material/TextField'
 import InputAdornment from '@mui/material/InputAdornment'
 import './style.css'
 import Logo from '../../component/atoms/logo'
-import Validacao from '../../db/validar.json' 
+import axios from 'axios'
 
-var objeto = Validacao;
 const Sign = () => {
     const navigate = useNavigate()
     let [name, setName] = useState('');
     let [senha, setSenha] = useState(''); 
-    let [error, setError] = useState(''); 
+    let [error, setError] = useState('');
+    
+    const instance = axios.create({
+        baseURL: 'http://localhost:3000/'
+      });
+
+    async function Logado(){
+        let val;
+        await instance({method:'post', url: 'user/validador', data: {name: name, senha: senha}})
+            .then((res) => val = res.data)
+            .catch((err) => {
+                console.log("ops! Erro na api GIT " + err)
+            })
+           if(val){
+            console.log('entrou')
+            navigate('/home')
+           }else {
+            setError('Esse usuário não existe')
+           }
+    }
+
 
     const validarCampo = () => {
-        for(let i = 0; i < objeto.length; i++){
-            if(name !== objeto[i].name || senha !== objeto[i].senha){
-                    setError('Este usuario não existe')
-             console.log("não entrar")
-            }else{
-                console.log("entrar")
-                navigate("/home");
+            if(name === '' || senha === ''){
+                setError('prencha os campos')
+                console.log("não entrar")
+            }else {
+                Logado()
             }
-         }
+         
     }
 
     return(

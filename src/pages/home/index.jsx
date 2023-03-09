@@ -7,7 +7,7 @@ const Home = () => {
     var companias = Companias;
 
     const mapCompanias = companias.map((companias) => 
-        <li>
+        <li key={companias.name}>
             <img src={companias.img}  alt={companias.name} title={companias.name}/>
             <h2> {companias.name}</h2>
         </li>
@@ -19,7 +19,7 @@ const Home = () => {
                 <div>
                     <h1>Veja os estabelecimentos mais proximos para coletar.</h1>
                     <div className="inputSearch">
-                        <span class="material-symbols-outlined icon">search</span>
+                        <span className="material-symbols-outlined icon">search</span>
                         <input type='text' 
                                 name="search"
                                 placeholder="Digite seu usuario"
@@ -35,10 +35,10 @@ const Home = () => {
 
             </section>
             <div className="menu-footer">
-                <span class="material-symbols-outlined">person</span>
-                <span class="material-symbols-outlined">home</span>
-                <span class="material-symbols-outlined">shopping_cart</span>
-                <span class="material-symbols-outlined">chat</span>
+                <span className="material-symbols-outlined">person</span>
+                <span className="material-symbols-outlined">home</span>
+                <span className="material-symbols-outlined">shopping_cart</span>
+                <span className="material-symbols-outlined">chat</span>
             </div>
         </>
     )
